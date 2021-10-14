@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11821A282706CCA100596ACD /* ContactAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11821A272706CCA000596ACD /* ContactAddView.swift */; };
+		11E6325926FD168100B2DBC6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6325826FD168100B2DBC6 /* Models.swift */; };
+		11E6325B26FD16A500B2DBC6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6325A26FD16A500B2DBC6 /* ViewModel.swift */; };
+		11E6325D26FD43AA00B2DBC6 /* ContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6325C26FD43AA00B2DBC6 /* ContactInfoView.swift */; };
 		AB25A0E926F44BB10045901C /* ContactBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25A0E826F44BB10045901C /* ContactBookApp.swift */; };
 		AB25A0EB26F44BB10045901C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25A0EA26F44BB10045901C /* ContentView.swift */; };
 		AB25A0ED26F44BB20045901C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB25A0EC26F44BB20045901C /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11821A272706CCA000596ACD /* ContactAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddView.swift; sourceTree = "<group>"; };
+		11E6325826FD168100B2DBC6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		11E6325A26FD16A500B2DBC6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		11E6325C26FD43AA00B2DBC6 /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
 		AB25A0E526F44BB10045901C /* ContactBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB25A0E826F44BB10045901C /* ContactBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBookApp.swift; sourceTree = "<group>"; };
 		AB25A0EA26F44BB10045901C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,10 +64,14 @@
 			children = (
 				AB25A0E826F44BB10045901C /* ContactBookApp.swift */,
 				AB25A0EA26F44BB10045901C /* ContentView.swift */,
+				11E6325826FD168100B2DBC6 /* Models.swift */,
+				11E6325A26FD16A500B2DBC6 /* ViewModel.swift */,
 				AB25A0F726F453750045901C /* ContactView.swift */,
 				AB25A0EC26F44BB20045901C /* Assets.xcassets */,
 				AB25A0F126F44BB20045901C /* Info.plist */,
 				AB25A0EE26F44BB20045901C /* Preview Content */,
+				11E6325C26FD43AA00B2DBC6 /* ContactInfoView.swift */,
+				11821A272706CCA000596ACD /* ContactAddView.swift */,
 			);
 			path = ContactBook;
 			sourceTree = "<group>";
@@ -141,9 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E6325B26FD16A500B2DBC6 /* ViewModel.swift in Sources */,
 				AB25A0EB26F44BB10045901C /* ContentView.swift in Sources */,
 				AB25A0F826F453750045901C /* ContactView.swift in Sources */,
 				AB25A0E926F44BB10045901C /* ContactBookApp.swift in Sources */,
+				11E6325926FD168100B2DBC6 /* Models.swift in Sources */,
+				11821A282706CCA100596ACD /* ContactAddView.swift in Sources */,
+				11E6325D26FD43AA00B2DBC6 /* ContactInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +287,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ContactBook/Preview Content\"";
+				DEVELOPMENT_TEAM = SUU23BU4QL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ContactBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -282,6 +300,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Nikita.ContactBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -292,8 +311,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ContactBook/Preview Content\"";
+				DEVELOPMENT_TEAM = SUU23BU4QL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ContactBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -303,6 +324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Nikita.ContactBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

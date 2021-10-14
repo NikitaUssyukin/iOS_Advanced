@@ -12,15 +12,25 @@ struct ContactView: View {
     var contactInfo: ContactInfo
     
     var body: some View {
-        VStack {
+        VStack (alignment: .leading){
             HStack {
+                Image(contactInfo.gender)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.trailing)
+                    .frame(alignment: .leading)
                 Text(contactInfo.firstName)
                     .font(.title)
+                    .multilineTextAlignment(.leading)
+                    .frame(alignment: .leading)
                 Text(contactInfo.lastName)
                     .font(.title)
+                    .multilineTextAlignment(.leading)
+                    .frame(alignment: .leading)
+                Spacer()
             }
-            .padding(.leading)
-            .padding(.trailing)
+            
+            .frame(maxWidth: .infinity)
             
             Text(contactInfo.phoneNumber)
                 .font(.subheadline)
