@@ -16,11 +16,9 @@ struct AlarmCellView: View {
             ForEach (viewModel.alarms.indices, id: \.self) { index in
                 NavigationLink(destination: AlarmDetailsView()) {
                     HStack {
-                            VStack {
+                        VStack (alignment: .leading) {
                                 Text(viewModel.alarms[index].alarmTime).bold()
-                                    .frame(alignment: .leading)
                                 Text(viewModel.alarms[index].alarmDetails)
-                                    .frame(alignment: .leading)
                             }
                             .padding()
                             Toggle(isOn: $viewModel.alarms[index].isActive) {

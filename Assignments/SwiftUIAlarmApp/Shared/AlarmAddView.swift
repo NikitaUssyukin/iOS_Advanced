@@ -17,48 +17,53 @@ struct AlarmAddView: View {
     
     
     var body: some View {
-        VStack {
-            Button("Cancel") {
-                presentationMode.wrappedValue.dismiss()
-            }
-            .padding()
-            HStack {
-                DatePicker("", selection: $pickerTime, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .scaledToFill()
-                    .datePickerStyle(.wheel)
-                
-            }.frame(width: 400, height: 270)
+        NavigationView {
             VStack {
-                TextField(" ", text: $textField)
-                    .padding()
+                HStack {
+                    DatePicker("", selection: $pickerTime, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .scaledToFill()
+                        .datePickerStyle(.wheel)
+                    
+                }.frame(width: 400, height: 270)
+                VStack {
+                    TextField(" ", text: $textField)
+                        .padding()
+                }
+                    .frame(width: 400, height: 54)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.gray, lineWidth: 2)
+                    )
+                    
+                    
+                Spacer()
+                
+                Button("Save") {
+                    dateFormatter.dateFormat = "hh:mm"
+                    var convertedTime: String = dateFormatter.string(from: pickerTime)
+                    print(convertedTime)
+                    viewModel.appendAlarm(alarmTime: convertedTime, alarmDetails: textField)
+                    convertedTime = ""
+                    print("\(viewModel.alarms[2].alarmTime)")
+                    print("\(viewModel.alarms[2].alarmDetails)")
+                    print("\(viewModel.alarms[2].isActive)")
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.blue)
             }
-                .frame(width: 400, height: 54)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
-                
-                
-            Spacer()
-            
-            Button("Save") {
-                dateFormatter.dateFormat = "hh:mm"
-                var convertedTime: String = dateFormatter.string(from: pickerTime)
-                print(convertedTime)
-                viewModel.appendAlarm(alarmTime: convertedTime, alarmDetails: textField)
-                convertedTime = ""
-                print("\(viewModel.alarms[2].alarmTime)")
-                print("\(viewModel.alarms[2].alarmDetails)")
-                print("\(viewModel.alarms[2].isActive)")
+            .navigationBarTitle("New alarm")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
-            }
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.blue)
-        }.frame(maxWidth: 400, maxHeight: .infinity)
+            })
+            .frame(maxWidth: 400, maxHeight: 700)
+        }
+        
       
     }
 }

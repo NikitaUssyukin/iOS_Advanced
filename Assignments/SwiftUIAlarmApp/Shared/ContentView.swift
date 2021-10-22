@@ -19,8 +19,11 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(Text("Alarms"))
-            .navigationBarItems(trailing: Button("Add") {
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing: Button() {
                 isShowingAddView = true
+            } label: {
+                Image(systemName: "plus")
             }).sheet(isPresented: $isShowingAddView) {
                 AlarmAddView(viewModel: viewModel)
             }
