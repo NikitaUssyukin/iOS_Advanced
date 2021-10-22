@@ -41,14 +41,14 @@ struct AlarmAddView: View {
                 Spacer()
                 
                 Button("Save") {
-                    dateFormatter.dateFormat = "hh:mm"
+                    dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm a")
+                    dateFormatter.amSymbol = ""
+                    dateFormatter.pmSymbol = ""
+                    dateFormatter.locale = Locale(identifier: "en_US")
                     var convertedTime: String = dateFormatter.string(from: pickerTime)
                     print(convertedTime)
                     viewModel.appendAlarm(alarmTime: convertedTime, alarmDetails: textField)
                     convertedTime = ""
-                    print("\(viewModel.alarms[2].alarmTime)")
-                    print("\(viewModel.alarms[2].alarmDetails)")
-                    print("\(viewModel.alarms[2].isActive)")
                     presentationMode.wrappedValue.dismiss()
                 }
                 .foregroundColor(.white)

@@ -10,11 +10,12 @@ import SwiftUI
 struct AlarmCellView: View {
     
     @StateObject var viewModel: AlarmAppViewModel
+    @State var isShowingDetailView = false
     
     var body: some View {
         List {
             ForEach (viewModel.alarms.indices, id: \.self) { index in
-                NavigationLink(destination: AlarmDetailsView()) {
+                NavigationLink(destination: AlarmDetailsView(viewModel: viewModel, alarmIndex: index), isActive: $isShowingDetailView) {
                     HStack {
                         VStack (alignment: .leading) {
                                 Text(viewModel.alarms[index].alarmTime).bold()

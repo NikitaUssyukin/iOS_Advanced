@@ -32,9 +32,13 @@ struct ContentView: View {
             if viewModel.alarms.isEmpty {
                 viewModel.appendAlarm(alarmTime: "23:30", alarmDetails: "Go to sleep")
                 viewModel.appendAlarm(alarmTime: "6:30", alarmDetails: "Wake up")
+                viewModel.appendAlarm(alarmTime: "11:00", alarmDetails: "Workout")
+                viewModel.appendAlarm(alarmTime: "14:15", alarmDetails: "Take medicine")
+                viewModel.appendAlarm(alarmTime: "12:10", alarmDetails: "Meet with Joe")
+                viewModel.appendAlarm(alarmTime: "8:30", alarmDetails: "Go for a walk with a dog")
+                viewModel.appendAlarm(alarmTime: "21:30", alarmDetails: "Prepare for sleep")
+                viewModel.appendAlarm(alarmTime: "10:30", alarmDetails: "Go to the groceries")
             }
-            print("finished onAppear in ContentView")
-            print(viewModel.alarms[0].alarmTime)
         }
         
         

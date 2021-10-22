@@ -1,5 +1,5 @@
 //
-//  SwiftUIAlarmAppApp.swift
+//  SwiftUIAlarmApp.swift
 //  Shared
 //
 //  Created by Nikita on 22.10.2021.
