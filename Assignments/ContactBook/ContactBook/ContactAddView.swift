@@ -11,6 +11,7 @@ struct ContactAddView: View {
     @State var contactBeingAdded: ContactInfo = ContactInfo(id: UUID(), firstName: "", lastName: "", phoneNumber: "", gender: "")
     var viewModel: ContactViewModel
     
+    
     var body: some View {
         VStack{
             TextField("First name", text: $contactBeingAdded.firstName).padding()
