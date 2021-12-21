@@ -15,24 +15,26 @@ struct AlarmCellContetntsView: View {
     @State var isShowingDetailView = false
     
     var body: some View {
-        NavigationLink(destination: AlarmDetailsView(viewModel: viewModel, alarm: $alarm), isActive: $isShowingDetailView) {
-            HStack {
-                VStack (alignment: .leading) {
-                        Text(alarm.alarmTime).bold()
-                        Text(alarm.alarmDetails)
-                    }
-                    .padding()
-                    Toggle(isOn: $alarm.isActive) {
-                        Text("")
-                    }
-                    .onTapGesture {
-                        print("Current index is...")
-                        print(index)
-                        print("Current alarm state is...")
-                        print(alarm.isActive)
-                    }
-                    .padding()
-            }
+//        NavigationLink(destination: AlarmDetailsView(viewModel: viewModel, alarm: $alarm), isActive: $isShowingDetailView) {
+//
+//            }
+        
+        HStack {
+            VStack (alignment: .leading) {
+                    Text(alarm.alarmTime).bold()
+                    Text(alarm.alarmDetails)
+                }
+                .padding()
+                Toggle(isOn: $alarm.isActive) {
+                    Text("")
+                }
+                .onTapGesture {
+                    print("Current index is...")
+                    print(index)
+                    print("Current alarm state is...")
+                    print(alarm.isActive)
+                }
+                .padding()
         }
     }
 }

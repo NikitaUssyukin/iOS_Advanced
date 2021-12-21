@@ -11,41 +11,53 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AlarmAppViewModel
     @State var isShowingAddView = false
     
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var alarms: FetchedResults<Alarm>
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                if !viewModel.alarms.isEmpty {
-                    AlarmCellView(viewModel: viewModel)
-                }
+        
+        VStack {
+            List(alarms) { alarm in
+                Text(alarm.alarmDetails ?? "Unknown details")
+                AlarmCellContetntsView(viewModel: viewModel, alarm: alarm)
             }
-            .navigationBarTitle(Text("Alarms"))
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: Button() {
-                isShowingAddView = true
-            } label: {
-                Image(systemName: "plus")
-            }).sheet(isPresented: $isShowingAddView) {
-                AlarmAddView(viewModel: viewModel)
-            }
-        }
-        .onAppear {
-            if viewModel.alarms.isEmpty {
-                viewModel.appendAlarm(alarmTime: "23:30", alarmDetails: "Go to sleep")
-                viewModel.appendAlarm(alarmTime: "6:30", alarmDetails: "Wake up")
-                viewModel.appendAlarm(alarmTime: "11:00", alarmDetails: "Workout")
-                viewModel.appendAlarm(alarmTime: "14:15", alarmDetails: "Take medicine")
-                viewModel.appendAlarm(alarmTime: "12:10", alarmDetails: "Meet with Joe")
-                viewModel.appendAlarm(alarmTime: "8:30", alarmDetails: "Go for a walk with a dog")
-                viewModel.appendAlarm(alarmTime: "21:30", alarmDetails: "Prepare for sleep")
-                viewModel.appendAlarm(alarmTime: "10:30", alarmDetails: "Go to the groceries")
+            Button("Add") {
+                let alarmTimes = ["6:30", "10:00", "11:30", "14:45", "23:30"]
+                let alarmDetails = ["Go to sleep", "Wake up", "Workout", "Take medicine", "Meet with Joe"]
+                let isActive = [true, false]
+                
+                let chosenTime = alarmTimes.randomElement()!
+                let chosenDetails = alarmDetails.randomElement()!
+                let chosenState = isActive.randomElement()!
+                
+                let alarm = Alarm(context: moc)
+                alarm.id = UUID()
+                alarm.alarmTime = "\(chosenTime)"
+                alarm.alarmDetails = "\(chosenDetails)"
+                alarm.isActive = chosenState
             }
         }
         
-        
-            
-        
-    }
-}
+//        NavigationView {
+//            VStack {
+//                if !viewModel.alarms.isEmpty {
+//                    AlarmCellView(viewModel: viewModel)
+//                }
+//            }
+//            .navigationBarTitle(Text("Alarms"))
+//            .navigationBarTitleDisplayMode(.inline)
+//            .navigationBarItems(trailing: Button() {
+//                isShowingAddView = true
+//            } label: {
+//                Image(systemName: "plus")
+//            }).sheet(isPresented: $isShowingAddView) {
+//                AlarmAddView(viewModel: viewModel)
+//            }
+//        }
+//
+//
+//    }
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
