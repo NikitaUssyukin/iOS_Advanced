@@ -13,6 +13,8 @@
 		112C9A01277220EC0009FCFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112C9A00277220EC0009FCFC /* Preview Assets.xcassets */; };
 		112C9A03277220EC0009FCFC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C9A02277220EC0009FCFC /* Persistence.swift */; };
 		112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */; };
+		AB018F8727724DA00065488C /* ExpenseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB018F8627724DA00065488C /* ExpenseAddView.swift */; };
+		AB018F8A2772522E0065488C /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB018F882772522E0065488C /* Expense+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		112C9A00277220EC0009FCFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		112C9A02277220EC0009FCFC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		112C9A05277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceTrackingAssistant.xcdatamodel; sourceTree = "<group>"; };
+		AB018F8627724DA00065488C /* ExpenseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddView.swift; sourceTree = "<group>"; };
+		AB018F882772522E0065488C /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,14 @@
 		112C99F8277220EA0009FCFC /* FinanceTrackingAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				AB018F882772522E0065488C /* Expense+CoreDataClass.swift */,
 				112C99F9277220EA0009FCFC /* FinanceTrackingAssistantApp.swift */,
 				112C99FB277220EA0009FCFC /* ContentView.swift */,
 				112C99FD277220EC0009FCFC /* Assets.xcassets */,
 				112C9A02277220EC0009FCFC /* Persistence.swift */,
 				112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */,
 				112C99FF277220EC0009FCFC /* Preview Content */,
+				AB018F8627724DA00065488C /* ExpenseAddView.swift */,
 			);
 			path = FinanceTrackingAssistant;
 			sourceTree = "<group>";
@@ -144,8 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				112C9A03277220EC0009FCFC /* Persistence.swift in Sources */,
+				AB018F8727724DA00065488C /* ExpenseAddView.swift in Sources */,
 				112C99FC277220EA0009FCFC /* ContentView.swift in Sources */,
 				112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */,
+				AB018F8A2772522E0065488C /* Expense+CoreDataClass.swift in Sources */,
 				112C99FA277220EA0009FCFC /* FinanceTrackingAssistantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
