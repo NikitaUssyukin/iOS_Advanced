@@ -23,6 +23,8 @@
 		115C820927228BD700A49352 /* AlarmCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C820727228BD700A49352 /* AlarmCellView.swift */; };
 		115C820E27228CD900A49352 /* AlarmAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C820D27228CD900A49352 /* AlarmAppViewModel.swift */; };
 		115C820F27228CD900A49352 /* AlarmAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C820D27228CD900A49352 /* AlarmAppViewModel.swift */; };
+		11798A8F276DD0F4007F6DB4 /* AlarmCellContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11798A8E276DD0F4007F6DB4 /* AlarmCellContentsView.swift */; };
+		11798A90276DD0F4007F6DB4 /* AlarmCellContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11798A8E276DD0F4007F6DB4 /* AlarmCellContentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,7 @@
 		115C820427228BBC00A49352 /* AlarmDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailsView.swift; sourceTree = "<group>"; };
 		115C820727228BD700A49352 /* AlarmCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellView.swift; sourceTree = "<group>"; };
 		115C820D27228CD900A49352 /* AlarmAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmAppViewModel.swift; sourceTree = "<group>"; };
+		11798A8E276DD0F4007F6DB4 /* AlarmCellContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellContentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 				115C820127228BAC00A49352 /* AlarmAddView.swift */,
 				115C820427228BBC00A49352 /* AlarmDetailsView.swift */,
 				115C820727228BD700A49352 /* AlarmCellView.swift */,
+				11798A8E276DD0F4007F6DB4 /* AlarmCellContentsView.swift */,
 				115C81E22722827500A49352 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -200,6 +204,7 @@
 				115C81F02722827500A49352 /* SwiftUIAlarmApp.swift in Sources */,
 				115C820227228BAC00A49352 /* AlarmAddView.swift in Sources */,
 				115C820527228BBC00A49352 /* AlarmDetailsView.swift in Sources */,
+				11798A8F276DD0F4007F6DB4 /* AlarmCellContentsView.swift in Sources */,
 				115C820E27228CD900A49352 /* AlarmAppViewModel.swift in Sources */,
 				115C820827228BD700A49352 /* AlarmCellView.swift in Sources */,
 				115C81FF27228B9D00A49352 /* Alarm.swift in Sources */,
@@ -214,6 +219,7 @@
 				115C81F12722827500A49352 /* SwiftUIAlarmApp.swift in Sources */,
 				115C820327228BAC00A49352 /* AlarmAddView.swift in Sources */,
 				115C820627228BBC00A49352 /* AlarmDetailsView.swift in Sources */,
+				11798A90276DD0F4007F6DB4 /* AlarmCellContentsView.swift in Sources */,
 				115C820F27228CD900A49352 /* AlarmAppViewModel.swift in Sources */,
 				115C820927228BD700A49352 /* AlarmCellView.swift in Sources */,
 				115C820027228B9D00A49352 /* Alarm.swift in Sources */,

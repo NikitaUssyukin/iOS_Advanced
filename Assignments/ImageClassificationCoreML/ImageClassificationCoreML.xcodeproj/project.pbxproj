@@ -14,8 +14,8 @@
 		111BD5BD2762CBC20040632A /* DetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BD5BC2762CBC20040632A /* DetectorViewModel.swift */; };
 		111BD5BF2762CBCE0040632A /* DetectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BD5BE2762CBCE0040632A /* DetectorModel.swift */; };
 		111BD5C12762D69D0040632A /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BD5C02762D69D0040632A /* ImagePickView.swift */; };
-		111BD5C3276309FC0040632A /* WheelDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 111BD5C2276309FC0040632A /* WheelDetector.mlmodel */; };
 		111BD5C5276384090040632A /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111BD5C4276384090040632A /* UIImageExtensions.swift */; };
+		11798A92276DDB11007F6DB4 /* WheelDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 11798A91276DDB11007F6DB4 /* WheelDetector.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		111BD5BC2762CBC20040632A /* DetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorViewModel.swift; sourceTree = "<group>"; };
 		111BD5BE2762CBCE0040632A /* DetectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorModel.swift; sourceTree = "<group>"; };
 		111BD5C02762D69D0040632A /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
-		111BD5C2276309FC0040632A /* WheelDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WheelDetector.mlmodel; sourceTree = "<group>"; };
 		111BD5C4276384090040632A /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		11798A91276DDB11007F6DB4 /* WheelDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WheelDetector.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		110E5CA227596E80008FFB68 /* ImageClassificationCoreML */ = {
 			isa = PBXGroup;
 			children = (
-				111BD5C2276309FC0040632A /* WheelDetector.mlmodel */,
+				11798A91276DDB11007F6DB4 /* WheelDetector.mlmodel */,
 				110E5CA327596E80008FFB68 /* ImageClassificationCoreMLApp.swift */,
 				110E5CA527596E80008FFB68 /* ContentView.swift */,
 				111BD5BC2762CBC20040632A /* DetectorViewModel.swift */,
@@ -153,9 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				111BD5BF2762CBCE0040632A /* DetectorModel.swift in Sources */,
+				11798A92276DDB11007F6DB4 /* WheelDetector.mlmodel in Sources */,
 				111BD5C12762D69D0040632A /* ImagePickView.swift in Sources */,
 				111BD5C5276384090040632A /* UIImageExtensions.swift in Sources */,
-				111BD5C3276309FC0040632A /* WheelDetector.mlmodel in Sources */,
 				111BD5BD2762CBC20040632A /* DetectorViewModel.swift in Sources */,
 				110E5CA627596E80008FFB68 /* ContentView.swift in Sources */,
 				110E5CA427596E80008FFB68 /* ImageClassificationCoreMLApp.swift in Sources */,

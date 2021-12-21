@@ -24,10 +24,10 @@ class DetectorViewModel: ObservableObject {
             let mlModel = try WheelDetector(configuration: config)
             let input = WheelDetectorInput(imagePath: imageBuffer)
             let output = try mlModel.prediction(input: input)
-            let type = output.featureValue(for: "confidence")
-            let confidence = output.confidence
-            let coordinates = output.coordinates
-            print("Wheels:\(type) Confidence:\(confidence) Coordinates:\(coordinates)")
+            detectorModel.features = output.featureNames
+            detectorModel.confidence = output.confidence
+            detectorModel.coordinates = output.coordinates
+            print("Wheels:\(detectorModel.features) Confidence:\(detectorModel.confidence) Coordinates:\(detectorModel.coordinates)")
         }
         catch {
             

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImagePickView: View {
-    @StateObject var detectorVM: DetectorViewModel
+    @ObservedObject var detectorVM: DetectorViewModel
     var numberOfImages = 12
     @State var currentIndexSwitch = false
     var body: some View {

@@ -10,13 +10,13 @@ import UIKit
 
 struct ContentView: View {
     
-    @ObservedObject var detectorVM = DetectorViewModel()
+    @StateObject var detectorVM = DetectorViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 VStack {
-                    Image(systemName: "photo")
+                    Image("Image\(detectorVM.detectorModel.currentIndex)")
                         .resizable()
                         .scaledToFit()
                     .padding()
@@ -29,12 +29,18 @@ struct ContentView: View {
                             Text("Pick an image").foregroundColor(.blue)
                         }
                     }
-                    Button("Print index") {
-                        print(detectorVM.detectorModel.currentIndex)
-                    }
                     Button("Detect objects") {
                         detectorVM.detectObjects(analysedImage: UIImage(named: "Image\(detectorVM.detectorModel.currentIndex)"))
                     }
+//                    if detectorVM.detectorModel.features != nil {
+//                        Text(String(detectorVM.detectorModel.features!))
+//                    }
+//                    if detectorVM.detectorModel.confidence != nil {
+//                        Text(String(detectorVM.detectorModel.confidence!))
+//                    }
+//                    if detectorVM.detectorModel.coordinates != nil {
+//                        Text(String(detectorVM.detectorModel.coordinates!))
+//                    }
                     Spacer()
                 }
             }

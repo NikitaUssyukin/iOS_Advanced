@@ -7,7 +7,11 @@
 
 import Foundation
 import SwiftUI
+import CoreML
 
 struct DetectorModel {
     var currentIndex: Int = 0
+    var features: Set<String>?
+    var confidence: MLMultiArray?
+    var coordinates: MLMultiArray?
 }
