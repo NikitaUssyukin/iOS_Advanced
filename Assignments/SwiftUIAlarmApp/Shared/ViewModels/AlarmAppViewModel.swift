@@ -6,15 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
 class AlarmAppViewModel: ObservableObject {
-    @Published var alarms: [Alarm] = []
+    @Environment(\.managedObjectContext) var moc
     
-//    func appendAlarm(alarmTime: String, alarmDetails: String) {
-//        self.alarms.append(Alarm(id: UUID(), alarmTime: alarmTime, alarmDetails: alarmDetails, isActive: true))
-//    }
+    func appendAlarm(alarmTime: String, alarmDetails: String) {
+        let alarm = Alarm(context: moc)
+        alarm.id = UUID()
+        alarm.alarmTime = "\(alarmTime)"
+        alarm.alarmDetails = "\(alarmDetails)"
+        alarm.isActive = true
+        
+        try? moc.save()
+    }
     
     func toggleAlarm(at: Int, toggleState: Bool) {
-        self.alarms[at].isActive = toggleState
+
     }
 }

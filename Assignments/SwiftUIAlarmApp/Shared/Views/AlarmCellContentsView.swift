@@ -21,8 +21,8 @@ struct AlarmCellContetntsView: View {
         
         HStack {
             VStack (alignment: .leading) {
-                    Text(alarm.alarmTime).bold()
-                    Text(alarm.alarmDetails)
+                    Text(alarm.alarmTime ?? "Unknown").bold()
+                    Text(alarm.alarmDetails ?? "Unknown")
                 }
                 .padding()
                 Toggle(isOn: $alarm.isActive) {

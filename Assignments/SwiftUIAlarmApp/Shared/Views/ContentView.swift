@@ -16,51 +16,45 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
-            List(alarms) { alarm in
-                Text(alarm.alarmDetails ?? "Unknown details")
-                AlarmCellContetntsView(viewModel: viewModel, alarm: alarm)
+        NavigationView {
+            VStack {
+                List(alarms) { alarm in
+                    AlarmCellContetntsView(viewModel: viewModel, alarm: alarm)
+                }
+                Button("Add") {
+                    let alarmTimes = ["6:30", "10:00", "11:30", "14:45", "23:30"]
+                    let alarmDetails = ["Go to sleep", "Wake up", "Workout", "Take medicine", "Meet with Joe"]
+                    let isActive = [true, false]
+                    
+                    let chosenTime = alarmTimes.randomElement()!
+                    let chosenDetails = alarmDetails.randomElement()!
+                    let chosenState = isActive.randomElement()!
+                    
+                    let alarm = Alarm(context: moc)
+                    alarm.id = UUID()
+                    alarm.alarmTime = "\(chosenTime)"
+                    alarm.alarmDetails = "\(chosenDetails)"
+                    alarm.isActive = chosenState
+                    
+                    try? moc.save()
+                }
             }
-            Button("Add") {
-                let alarmTimes = ["6:30", "10:00", "11:30", "14:45", "23:30"]
-                let alarmDetails = ["Go to sleep", "Wake up", "Workout", "Take medicine", "Meet with Joe"]
-                let isActive = [true, false]
-                
-                let chosenTime = alarmTimes.randomElement()!
-                let chosenDetails = alarmDetails.randomElement()!
-                let chosenState = isActive.randomElement()!
-                
-                let alarm = Alarm(context: moc)
-                alarm.id = UUID()
-                alarm.alarmTime = "\(chosenTime)"
-                alarm.alarmDetails = "\(chosenDetails)"
-                alarm.isActive = chosenState
+            .navigationBarTitle(Text("Alarms"))
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing: Button() {
+                isShowingAddView = true
+            } label: {
+                Image(systemName: "plus")
+            }).sheet(isPresented: $isShowingAddView) {
+                AlarmAddView(viewModel: viewModel)
             }
         }
-        
-//        NavigationView {
-//            VStack {
-//                if !viewModel.alarms.isEmpty {
-//                    AlarmCellView(viewModel: viewModel)
-//                }
-//            }
-//            .navigationBarTitle(Text("Alarms"))
-//            .navigationBarTitleDisplayMode(.inline)
-//            .navigationBarItems(trailing: Button() {
-//                isShowingAddView = true
-//            } label: {
-//                Image(systemName: "plus")
-//            }).sheet(isPresented: $isShowingAddView) {
-//                AlarmAddView(viewModel: viewModel)
-//            }
-//        }
-//
-//
-//    }
-//}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
+    
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

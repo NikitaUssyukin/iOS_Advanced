@@ -7,30 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11604CAC2770D250006B022E /* CoreDataTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11604CAB2770D250006B022E /* CoreDataTestApp.swift */; };
-		11604CAE2770D250006B022E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11604CAD2770D250006B022E /* ContentView.swift */; };
-		11604CB02770D252006B022E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11604CAF2770D252006B022E /* Assets.xcassets */; };
-		11604CB32770D252006B022E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11604CB22770D252006B022E /* Preview Assets.xcassets */; };
-		11604CB52770D252006B022E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11604CB42770D252006B022E /* Persistence.swift */; };
-		11604CB82770D252006B022E /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11604CB62770D252006B022E /* CoreDataTest.xcdatamodeld */; };
-		11604CC02770D69F006B022E /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11604CBE2770D69F006B022E /* Person+CoreDataClass.swift */; };
-		11604CC12770D69F006B022E /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11604CBF2770D69F006B022E /* Person+CoreDataProperties.swift */; };
+		112C99FA277220EA0009FCFC /* FinanceTrackingAssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C99F9277220EA0009FCFC /* FinanceTrackingAssistantApp.swift */; };
+		112C99FC277220EA0009FCFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C99FB277220EA0009FCFC /* ContentView.swift */; };
+		112C99FE277220EC0009FCFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112C99FD277220EC0009FCFC /* Assets.xcassets */; };
+		112C9A01277220EC0009FCFC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112C9A00277220EC0009FCFC /* Preview Assets.xcassets */; };
+		112C9A03277220EC0009FCFC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C9A02277220EC0009FCFC /* Persistence.swift */; };
+		112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11604CA82770D250006B022E /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		11604CAB2770D250006B022E /* CoreDataTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestApp.swift; sourceTree = "<group>"; };
-		11604CAD2770D250006B022E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		11604CAF2770D252006B022E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		11604CB22770D252006B022E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		11604CB42770D252006B022E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		11604CB72770D252006B022E /* CoreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest.xcdatamodel; sourceTree = "<group>"; };
-		11604CBE2770D69F006B022E /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		11604CBF2770D69F006B022E /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		112C99F6277220EA0009FCFC /* FinanceTrackingAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceTrackingAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		112C99F9277220EA0009FCFC /* FinanceTrackingAssistantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackingAssistantApp.swift; sourceTree = "<group>"; };
+		112C99FB277220EA0009FCFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		112C99FD277220EC0009FCFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		112C9A00277220EC0009FCFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		112C9A02277220EC0009FCFC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		112C9A05277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceTrackingAssistant.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		11604CA52770D250006B022E /* Frameworks */ = {
+		112C99F3277220E90009FCFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,89 +36,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11604C9F2770D250006B022E = {
+		112C99ED277220E90009FCFC = {
 			isa = PBXGroup;
 			children = (
-				11604CAA2770D250006B022E /* CoreDataTest */,
-				11604CA92770D250006B022E /* Products */,
+				112C99F8277220EA0009FCFC /* FinanceTrackingAssistant */,
+				112C99F7277220EA0009FCFC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		11604CA92770D250006B022E /* Products */ = {
+		112C99F7277220EA0009FCFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11604CA82770D250006B022E /* CoreDataTest.app */,
+				112C99F6277220EA0009FCFC /* FinanceTrackingAssistant.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		11604CAA2770D250006B022E /* CoreDataTest */ = {
+		112C99F8277220EA0009FCFC /* FinanceTrackingAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				11604CC22770DAB0006B022E /* Models */,
-				11604CAB2770D250006B022E /* CoreDataTestApp.swift */,
-				11604CAD2770D250006B022E /* ContentView.swift */,
-				11604CAF2770D252006B022E /* Assets.xcassets */,
-				11604CB42770D252006B022E /* Persistence.swift */,
-				11604CB62770D252006B022E /* CoreDataTest.xcdatamodeld */,
-				11604CB12770D252006B022E /* Preview Content */,
+				112C99F9277220EA0009FCFC /* FinanceTrackingAssistantApp.swift */,
+				112C99FB277220EA0009FCFC /* ContentView.swift */,
+				112C99FD277220EC0009FCFC /* Assets.xcassets */,
+				112C9A02277220EC0009FCFC /* Persistence.swift */,
+				112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */,
+				112C99FF277220EC0009FCFC /* Preview Content */,
 			);
-			path = CoreDataTest;
+			path = FinanceTrackingAssistant;
 			sourceTree = "<group>";
 		};
-		11604CB12770D252006B022E /* Preview Content */ = {
+		112C99FF277220EC0009FCFC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				11604CB22770D252006B022E /* Preview Assets.xcassets */,
+				112C9A00277220EC0009FCFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		11604CC22770DAB0006B022E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				11604CBE2770D69F006B022E /* Person+CoreDataClass.swift */,
-				11604CBF2770D69F006B022E /* Person+CoreDataProperties.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11604CA72770D250006B022E /* CoreDataTest */ = {
+		112C99F5277220E90009FCFC /* FinanceTrackingAssistant */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11604CBB2770D252006B022E /* Build configuration list for PBXNativeTarget "CoreDataTest" */;
+			buildConfigurationList = 112C9A09277220EC0009FCFC /* Build configuration list for PBXNativeTarget "FinanceTrackingAssistant" */;
 			buildPhases = (
-				11604CA42770D250006B022E /* Sources */,
-				11604CA52770D250006B022E /* Frameworks */,
-				11604CA62770D250006B022E /* Resources */,
+				112C99F2277220E90009FCFC /* Sources */,
+				112C99F3277220E90009FCFC /* Frameworks */,
+				112C99F4277220E90009FCFC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CoreDataTest;
-			productName = CoreDataTest;
-			productReference = 11604CA82770D250006B022E /* CoreDataTest.app */;
+			name = FinanceTrackingAssistant;
+			productName = FinanceTrackingAssistant;
+			productReference = 112C99F6277220EA0009FCFC /* FinanceTrackingAssistant.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		11604CA02770D250006B022E /* Project object */ = {
+		112C99EE277220E90009FCFC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					11604CA72770D250006B022E = {
+					112C99F5277220E90009FCFC = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 11604CA32770D250006B022E /* Build configuration list for PBXProject "CoreDataTest" */;
+			buildConfigurationList = 112C99F1277220E90009FCFC /* Build configuration list for PBXProject "FinanceTrackingAssistant" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,46 +116,44 @@
 				en,
 				Base,
 			);
-			mainGroup = 11604C9F2770D250006B022E;
-			productRefGroup = 11604CA92770D250006B022E /* Products */;
+			mainGroup = 112C99ED277220E90009FCFC;
+			productRefGroup = 112C99F7277220EA0009FCFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				11604CA72770D250006B022E /* CoreDataTest */,
+				112C99F5277220E90009FCFC /* FinanceTrackingAssistant */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		11604CA62770D250006B022E /* Resources */ = {
+		112C99F4277220E90009FCFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11604CB32770D252006B022E /* Preview Assets.xcassets in Resources */,
-				11604CB02770D252006B022E /* Assets.xcassets in Resources */,
+				112C9A01277220EC0009FCFC /* Preview Assets.xcassets in Resources */,
+				112C99FE277220EC0009FCFC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		11604CA42770D250006B022E /* Sources */ = {
+		112C99F2277220E90009FCFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11604CB82770D252006B022E /* CoreDataTest.xcdatamodeld in Sources */,
-				11604CB52770D252006B022E /* Persistence.swift in Sources */,
-				11604CC12770D69F006B022E /* Person+CoreDataProperties.swift in Sources */,
-				11604CC02770D69F006B022E /* Person+CoreDataClass.swift in Sources */,
-				11604CAE2770D250006B022E /* ContentView.swift in Sources */,
-				11604CAC2770D250006B022E /* CoreDataTestApp.swift in Sources */,
+				112C9A03277220EC0009FCFC /* Persistence.swift in Sources */,
+				112C99FC277220EA0009FCFC /* ContentView.swift in Sources */,
+				112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */,
+				112C99FA277220EA0009FCFC /* FinanceTrackingAssistantApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		11604CB92770D252006B022E /* Debug */ = {
+		112C9A07277220EC0009FCFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -230,7 +214,7 @@
 			};
 			name = Debug;
 		};
-		11604CBA2770D252006B022E /* Release */ = {
+		112C9A08277220EC0009FCFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -285,14 +269,14 @@
 			};
 			name = Release;
 		};
-		11604CBC2770D252006B022E /* Debug */ = {
+		112C9A0A277220EC0009FCFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CoreDataTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FinanceTrackingAssistant/Preview Content\"";
 				DEVELOPMENT_TEAM = SUU23BU4QL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -307,7 +291,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Nikita.CoreDataTest;
+				PRODUCT_BUNDLE_IDENTIFIER = Nikita.FinanceTrackingAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,14 +299,14 @@
 			};
 			name = Debug;
 		};
-		11604CBD2770D252006B022E /* Release */ = {
+		112C9A0B277220EC0009FCFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CoreDataTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FinanceTrackingAssistant/Preview Content\"";
 				DEVELOPMENT_TEAM = SUU23BU4QL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -337,7 +321,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Nikita.CoreDataTest;
+				PRODUCT_BUNDLE_IDENTIFIER = Nikita.FinanceTrackingAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -348,20 +332,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11604CA32770D250006B022E /* Build configuration list for PBXProject "CoreDataTest" */ = {
+		112C99F1277220E90009FCFC /* Build configuration list for PBXProject "FinanceTrackingAssistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11604CB92770D252006B022E /* Debug */,
-				11604CBA2770D252006B022E /* Release */,
+				112C9A07277220EC0009FCFC /* Debug */,
+				112C9A08277220EC0009FCFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11604CBB2770D252006B022E /* Build configuration list for PBXNativeTarget "CoreDataTest" */ = {
+		112C9A09277220EC0009FCFC /* Build configuration list for PBXNativeTarget "FinanceTrackingAssistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11604CBC2770D252006B022E /* Debug */,
-				11604CBD2770D252006B022E /* Release */,
+				112C9A0A277220EC0009FCFC /* Debug */,
+				112C9A0B277220EC0009FCFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -369,17 +353,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		11604CB62770D252006B022E /* CoreDataTest.xcdatamodeld */ = {
+		112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				11604CB72770D252006B022E /* CoreDataTest.xcdatamodel */,
+				112C9A05277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodel */,
 			);
-			currentVersion = 11604CB72770D252006B022E /* CoreDataTest.xcdatamodel */;
-			path = CoreDataTest.xcdatamodeld;
+			currentVersion = 112C9A05277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodel */;
+			path = FinanceTrackingAssistant.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 11604CA02770D250006B022E /* Project object */;
+	rootObject = 112C99EE277220E90009FCFC /* Project object */;
 }
