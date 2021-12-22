@@ -9,34 +9,13 @@ import Foundation
 import SwiftUI
 import CoreData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
-
-//    static var preview: PersistenceController = {
-//        let result = PersistenceController(inMemory: true)
-//        let viewContext = result.container.viewContext
-//        for _ in 0..<10 {
-//            let newExpense = Expense(context: viewContext)
-//            newExpense.timestamp = Date()
-//        }
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            let nsError = error as NSError
-//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//        }
-//        return result
-//    }()
-
+class PersistenceController: ObservableObject {
+    
     let container: NSPersistentContainer
+    @Published var savedExpenses: [Expense] = []
 
-    init(inMemory: Bool = false) {
+    init() {
         container = NSPersistentContainer(name: "FinanceTrackingAssistant")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
-        }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -53,20 +32,59 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        fetchExpenses()
+    }
+    
+    func fetchExpenses() {
+        let request = NSFetchRequest<Expense>(entityName: "Expense")
+        
+        do {
+            savedExpenses = try container.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching. \(error)")
+        }
     }
 }
 
 class FTAViewModel: ObservableObject {
     
-    @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Expense.timestamp, ascending: true)],
-        animation: .default)
-    var expenses: FetchedResults<Expense>
+    let container: NSPersistentContainer
+    @Published var savedExpenses: [Expense] = []
+
+    init() {
+        container = NSPersistentContainer(name: "FinanceTrackingAssistant")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+
+                /*
+                Typical reasons for an error here include:
+                * The parent directory does not exist, cannot be created, or disallows writing.
+                * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                * The device is out of space.
+                * The store could not be migrated to the current model version.
+                Check the error message to determine what the actual problem was.
+                */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        fetchExpenses()
+    }
+    
+    func fetchExpenses() {
+        let request = NSFetchRequest<Expense>(entityName: "Expense")
+        
+        do {
+            savedExpenses = try container.viewContext.fetch(request)
+        } catch let error {
+            print("Error fetching. \(error)")
+        }
+    }
     
     func addExpense() {
         withAnimation {
-            let newExpense = Expense(context: self.viewContext)
+            let newExpense = Expense(context: container.viewContext)
             newExpense.id = UUID()
             newExpense.timestamp = Date()
             newExpense.amount = Int64(Int.random(in: 0...300))
@@ -75,19 +93,20 @@ class FTAViewModel: ObservableObject {
 
             do {
                 print("id: \(newExpense.id), amount: \(newExpense.amount), currency: \(newExpense.currency), category: \(newExpense.id), category: \(newExpense.id)")
-                try self.viewContext.save()
+                try container.viewContext.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+            fetchExpenses()
         }
     }
     
     func addExpense(amount: Int64) {
         withAnimation {
-            let newExpense = Expense(context: viewContext)
+            let newExpense = Expense(context: container.viewContext)
             newExpense.id = UUID()
             newExpense.timestamp = Date()
             newExpense.amount = amount
@@ -95,7 +114,7 @@ class FTAViewModel: ObservableObject {
             newExpense.category = "General"
 
             do {
-                try viewContext.save()
+                try container.viewContext.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -127,16 +146,17 @@ class FTAViewModel: ObservableObject {
 
     func deleteExpense(offsets: IndexSet) {
         withAnimation {
-            offsets.map { expenses[$0] }.forEach(viewContext.delete)
+            offsets.map { savedExpenses[$0] }.forEach(container.viewContext.delete)
 
             do {
-                try viewContext.save()
+                try container.viewContext.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+            fetchExpenses()
         }
     }
 }

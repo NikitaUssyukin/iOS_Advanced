@@ -40,7 +40,7 @@ struct ContentView: View {
                 .tag(0)
                 NavigationView {
                     List {
-                        ForEach(viewModel.expenses) { expense in
+                        ForEach(viewModel.savedExpenses) { expense in
                             NavigationLink {
                                 if(expense.currency == "USD") {
                                     Label("\(expense.amount)", systemImage: "dollarsign.circle.fill")
@@ -66,7 +66,7 @@ struct ContentView: View {
                                 isShowingAddView.toggle()
                             }
                             .sheet(isPresented: $isShowingAddView) {
-                                ExpenseAddView().environmentObject(viewModel)
+                                ExpenseAddView()
                             }
                         }
                     }

@@ -9,13 +9,12 @@ import SwiftUI
 
 @main
 struct FinanceTrackingAssistantApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject private var viewModel = FTAViewModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(FTAViewModel())
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(viewModel)
         }
     }
 }
