@@ -58,9 +58,15 @@ struct PersistenceController {
 
 class FTAViewModel: ObservableObject {
     
-    func addExpense(viewContext: NSManagedObjectContext) {
+    @Environment(\.managedObjectContext) var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Expense.timestamp, ascending: true)],
+        animation: .default)
+    var expenses: FetchedResults<Expense>
+    
+    func addExpense() {
         withAnimation {
-            let newExpense = Expense(context: viewContext)
+            let newExpense = Expense(context: self.viewContext)
             newExpense.id = UUID()
             newExpense.timestamp = Date()
             newExpense.amount = Int64(Int.random(in: 0...300))
@@ -69,7 +75,7 @@ class FTAViewModel: ObservableObject {
 
             do {
                 print("id: \(newExpense.id), amount: \(newExpense.amount), currency: \(newExpense.currency), category: \(newExpense.id), category: \(newExpense.id)")
-                try viewContext.save()
+                try self.viewContext.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -79,7 +85,7 @@ class FTAViewModel: ObservableObject {
         }
     }
     
-    func addExpense(amount: Int64, viewContext: NSManagedObjectContext) {
+    func addExpense(amount: Int64) {
         withAnimation {
             let newExpense = Expense(context: viewContext)
             newExpense.id = UUID()
@@ -119,12 +125,8 @@ class FTAViewModel: ObservableObject {
 //    }
     
 
-    func deleteExpense(offsets: IndexSet, viewContext: NSManagedObjectContext) {
+    func deleteExpense(offsets: IndexSet) {
         withAnimation {
-            @FetchRequest(
-                sortDescriptors: [NSSortDescriptor(keyPath: \Expense.timestamp, ascending: true)],
-                animation: .default)
-            var expenses: FetchedResults<Expense>
             offsets.map { expenses[$0] }.forEach(viewContext.delete)
 
             do {

@@ -10,11 +10,6 @@ import CoreData
 
 struct ContentView: View {
     //CoreData
-    @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Expense.timestamp, ascending: true)],
-        animation: .default)
-    var expenses: FetchedResults<Expense>
     
     //State variables
     @State var selectedIndex = 1
@@ -45,7 +40,7 @@ struct ContentView: View {
                 .tag(0)
                 NavigationView {
                     List {
-                        ForEach(expenses) { expense in
+                        ForEach(viewModel.expenses) { expense in
                             NavigationLink {
                                 if(expense.currency == "USD") {
                                     Label("\(expense.amount)", systemImage: "dollarsign.circle.fill")
@@ -58,9 +53,8 @@ struct ContentView: View {
                                 Text("Expense category: \(expense.category ?? "Unknown")")
                             }
                         }
-                        .onDelete(perform: { indexSet in
-                            viewModel.deleteExpense(offsets: indexSet, viewContext: viewContext)
-                        })
+                        .onDelete(perform: viewModel.deleteExpense)
+                        .environmentObject(viewModel)
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
@@ -72,13 +66,13 @@ struct ContentView: View {
                                 isShowingAddView.toggle()
                             }
                             .sheet(isPresented: $isShowingAddView) {
-                                ExpenseAddView().environment(\.managedObjectContext, viewContext)
+                                ExpenseAddView().environmentObject(viewModel)
                             }
                         }
                     }
                     Text("Select an Expense")
                     Button("Generate Random Expense") {
-                        viewModel.addExpense(viewContext: viewContext)
+                        viewModel.addExpense()
                     }
                 }
                 .tabItem {

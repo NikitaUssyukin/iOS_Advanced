@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct ExpenseAddView: View {
-    @Environment(\.managedObjectContext) var viewContext
     
     @EnvironmentObject var viewModel: FTAViewModel
     @State var expenseAmount = ""
@@ -26,7 +25,7 @@ struct ExpenseAddView: View {
                         }
                     }
                 Button("Add Expense") {
-                    viewModel.addExpense(viewContext: viewContext)
+                    viewModel.addExpense()
                 }
 //                Picker("Currency", selection: <#T##Binding<_>#>)
 //                Picker("Category", selection: <#T##Binding<_>#>)
