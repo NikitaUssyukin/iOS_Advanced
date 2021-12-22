@@ -13,10 +13,8 @@ struct ContentView: View {
     
     //State variables
     @State var selectedIndex = 1
-    @State var isShowingAddView = false
-    @State var categoryName = ""
-    @State var categoryColor = ""
-    @State var categoryImage = ""
+    @State var isShowingExpenseAddView = false
+    @State var isShowingCategoryAddView = false
     @State var currencyString = ""
     
 //    @State var categoryInput = Category()
@@ -30,23 +28,6 @@ struct ContentView: View {
             MainHeaderView(selectedIndex: $selectedIndex)
             TabView(selection: $selectedIndex) {
                 VStack(spacing: 0) {
-                    Form {
-                        Section {
-                            TextField("Input Category", text: $categoryName)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            TextField("Input Color", text: $categoryColor)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            TextField("Input Image", text: $categoryImage)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                            Button("Add Category") {
-                                viewModel.addCategory(name: categoryName, color: categoryColor, image: categoryImage)
-                                print("clicked category")
-                            }.padding()
-                        }
-                    }
                     VStack(spacing: 0) {
                         List {
                             ForEach(viewModel.savedCategories) { category in
@@ -60,6 +41,12 @@ struct ContentView: View {
                             }
                             .onDelete(perform: viewModel.deleteCategory)
                             .environmentObject(viewModel)
+                            Button("Add new category") {
+                                isShowingCategoryAddView.toggle()
+                            }
+                            .sheet(isPresented: $isShowingCategoryAddView) {
+                                CategoryAddView().environmentObject(viewModel)
+                            }
                         }
                     }
                     Spacer()
@@ -94,9 +81,9 @@ struct ContentView: View {
                         ToolbarItem {
                             Button("Add") {
 //                                Label("Add Expense", systemImage: "plus")
-                                isShowingAddView.toggle()
+                                isShowingExpenseAddView.toggle()
                             }
-                            .sheet(isPresented: $isShowingAddView) {
+                            .sheet(isPresented: $isShowingExpenseAddView) {
                                 ExpenseAddView()
                             }
                         }

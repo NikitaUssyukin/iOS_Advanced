@@ -18,6 +18,7 @@
 		ABD7F7C52773A20C008C432A /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7C32773A20C008C432A /* Category+CoreDataClass.swift */; };
 		ABD7F7C92773A6BB008C432A /* LogicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7C82773A6BB008C432A /* LogicExtensions.swift */; };
 		ABD7F7CB2773A886008C432A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7CA2773A886008C432A /* UIExtensions.swift */; };
+		ABD7F7CD2773C9E8008C432A /* CategoryAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7CC2773C9E8008C432A /* CategoryAddView.swift */; };
 		ABDE481B277325FB00613E31 /* FTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE481A277325FB00613E31 /* FTAViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		ABD7F7C32773A20C008C432A /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ABD7F7C82773A6BB008C432A /* LogicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicExtensions.swift; sourceTree = "<group>"; };
 		ABD7F7CA2773A886008C432A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		ABD7F7CC2773C9E8008C432A /* CategoryAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAddView.swift; sourceTree = "<group>"; };
 		ABDE481A277325FB00613E31 /* FTAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			children = (
 				112C99FB277220EA0009FCFC /* ContentView.swift */,
 				AB018F8627724DA00065488C /* ExpenseAddView.swift */,
+				ABD7F7CC2773C9E8008C432A /* CategoryAddView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				112C99FC277220EA0009FCFC /* ContentView.swift in Sources */,
 				112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */,
 				AB018F8A2772522E0065488C /* Expense+CoreDataClass.swift in Sources */,
+				ABD7F7CD2773C9E8008C432A /* CategoryAddView.swift in Sources */,
 				112C99FA277220EA0009FCFC /* FinanceTrackingAssistantApp.swift in Sources */,
 				ABDE481B277325FB00613E31 /* FTAViewModel.swift in Sources */,
 			);
