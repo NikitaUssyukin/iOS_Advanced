@@ -25,7 +25,7 @@ struct ExpenseAddView: View {
                         }
                     }
                 Button("Add Expense") {
-                    viewModel.addExpense()
+                    viewModel.addExpense(amount: Int64(expenseAmount)!)
                 }
 //                Picker("Currency", selection: <#T##Binding<_>#>)
 //                Picker("Category", selection: <#T##Binding<_>#>)

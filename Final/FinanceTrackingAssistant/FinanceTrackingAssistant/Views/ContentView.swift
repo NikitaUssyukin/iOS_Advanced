@@ -14,8 +14,12 @@ struct ContentView: View {
     //State variables
     @State var selectedIndex = 1
     @State var isShowingAddView = false
-    @State var categoryString = ""
+    @State var categoryName = ""
+    @State var categoryColor = ""
+    @State var categoryImage = ""
     @State var currencyString = ""
+    
+//    @State var categoryInput = Category()
     
     //ViewModel
     @EnvironmentObject var viewModel: FTAViewModel
@@ -25,17 +29,44 @@ struct ContentView: View {
         VStack(spacing: 0) {
             MainHeaderView(selectedIndex: $selectedIndex)
             TabView(selection: $selectedIndex) {
-                NavigationView {
-                    VStack {
-                        Text("You're in a home navView!")
-                        TextField("Input Category", text: $categoryString)
-                        Button("Add Category") {
-                            print("clicked category")
+                VStack(spacing: 0) {
+                    Form {
+                        Section {
+                            TextField("Input Category", text: $categoryName)
+                                .padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("Input Color", text: $categoryColor)
+                                .padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            TextField("Input Image", text: $categoryImage)
+                                .padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            Button("Add Category") {
+                                viewModel.addCategory(name: categoryName, color: categoryColor, image: categoryImage)
+                                print("clicked category")
+                            }.padding()
                         }
                     }
+                    VStack(spacing: 0) {
+                        List {
+                            ForEach(viewModel.savedCategories) { category in
+                                NavigationLink {
+                                    Label(category.name ?? "error", systemImage: category.image ?? "questionmark.circle")
+                                        .foregroundColor(.yellow)
+                                } label: {
+                                    Label(category.name ?? "error", systemImage: category.image ?? "questionmark.circle")
+                                        .foregroundColor(.yellow)
+                                }
+                            }
+                            .onDelete(perform: viewModel.deleteCategory)
+                            .environmentObject(viewModel)
+                        }
+                    }
+                    Spacer()
                 }
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
+                
                 }
                 .tag(0)
                 NavigationView {
@@ -118,16 +149,6 @@ struct UnhighlightedMenuItem: ViewModifier {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 4)
             .foregroundColor(.black)
-    }
-}
-
-extension View {
-    func highlighted() -> some View {
-        self.modifier(HighlightedMenuItem())
-    }
-    
-    func unhighlighted() -> some View {
-        self.modifier(UnhighlightedMenuItem())
     }
 }
 

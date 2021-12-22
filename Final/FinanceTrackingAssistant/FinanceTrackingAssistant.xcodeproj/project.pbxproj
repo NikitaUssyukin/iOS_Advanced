@@ -15,6 +15,9 @@
 		112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */; };
 		AB018F8727724DA00065488C /* ExpenseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB018F8627724DA00065488C /* ExpenseAddView.swift */; };
 		AB018F8A2772522E0065488C /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB018F882772522E0065488C /* Expense+CoreDataClass.swift */; };
+		ABD7F7C52773A20C008C432A /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7C32773A20C008C432A /* Category+CoreDataClass.swift */; };
+		ABD7F7C92773A6BB008C432A /* LogicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7C82773A6BB008C432A /* LogicExtensions.swift */; };
+		ABD7F7CB2773A886008C432A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD7F7CA2773A886008C432A /* UIExtensions.swift */; };
 		ABDE481B277325FB00613E31 /* FTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE481A277325FB00613E31 /* FTAViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		112C9A05277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceTrackingAssistant.xcdatamodel; sourceTree = "<group>"; };
 		AB018F8627724DA00065488C /* ExpenseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddView.swift; sourceTree = "<group>"; };
 		AB018F882772522E0065488C /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABD7F7C32773A20C008C432A /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABD7F7C82773A6BB008C432A /* LogicExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicExtensions.swift; sourceTree = "<group>"; };
+		ABD7F7CA2773A886008C432A /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		ABDE481A277325FB00613E31 /* FTAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +67,7 @@
 		112C99F8277220EA0009FCFC /* FinanceTrackingAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				ABD7F7C72773A6A6008C432A /* Extensions */,
 				ABDE48192773259A00613E31 /* Models */,
 				ABDE48182773259000613E31 /* ViewModels */,
 				ABDE48162773253200613E31 /* Views */,
@@ -79,6 +86,15 @@
 				112C9A00277220EC0009FCFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABD7F7C72773A6A6008C432A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABD7F7C82773A6BB008C432A /* LogicExtensions.swift */,
+				ABD7F7CA2773A886008C432A /* UIExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ABDE48162773253200613E31 /* Views */ = {
@@ -102,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				AB018F882772522E0065488C /* Expense+CoreDataClass.swift */,
+				ABD7F7C32773A20C008C432A /* Category+CoreDataClass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				112C9A03277220EC0009FCFC /* Persistence.swift in Sources */,
+				ABD7F7C92773A6BB008C432A /* LogicExtensions.swift in Sources */,
+				ABD7F7C52773A20C008C432A /* Category+CoreDataClass.swift in Sources */,
+				ABD7F7CB2773A886008C432A /* UIExtensions.swift in Sources */,
 				AB018F8727724DA00065488C /* ExpenseAddView.swift in Sources */,
 				112C99FC277220EA0009FCFC /* ContentView.swift in Sources */,
 				112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */,
