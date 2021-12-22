@@ -11,22 +11,25 @@ import Combine
 struct ExpenseAddView: View {
     @Environment(\.managedObjectContext) var viewContext
     
-    @State var expense = Expense()
-    @State var expenseAmountString = ""
+    @EnvironmentObject var viewModel: FTAViewModel
+    @State var expenseAmount = ""
     
     var body: some View {
         Form {
             Section {
-                TextField("Amount Spent", text: $expenseAmountString)
+                TextField("Amount Spent", text: $expenseAmount)
                     .keyboardType(.numberPad)
-                    .onReceive(Just(expenseAmountString)) { newValue in
+                    .onReceive(Just(expenseAmount)) { newValue in
                         let filtered = newValue.filter { "0123456789".contains($0) }
                         if filtered != newValue {
-                            self.expense.amount = Int64(filtered) ?? 0
+                            self.expenseAmount = filtered
                         }
                     }
-                Picker("Currency", selection: <#T##Binding<_>#>)
-                Picker("Category", selection: <#T##Binding<_>#>)
+                Button("Add Expense") {
+                    viewModel.addExpense(viewContext: viewContext)
+                }
+//                Picker("Currency", selection: <#T##Binding<_>#>)
+//                Picker("Category", selection: <#T##Binding<_>#>)
                 
             }
         }

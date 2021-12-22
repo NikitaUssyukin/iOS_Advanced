@@ -10,11 +10,11 @@ import CoreData
 
 struct ContentView: View {
     //CoreData
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Expense.timestamp, ascending: true)],
         animation: .default)
-    private var expenses: FetchedResults<Expense>
+    var expenses: FetchedResults<Expense>
     
     //State variables
     @State var selectedIndex = 1
@@ -22,6 +22,8 @@ struct ContentView: View {
     @State var categoryString = ""
     @State var currencyString = ""
     
+    //ViewModel
+    @EnvironmentObject var viewModel: FTAViewModel
     
     
     var body: some View {
@@ -32,8 +34,8 @@ struct ContentView: View {
                     VStack {
                         Text("You're in a home navView!")
                         TextField("Input Category", text: $categoryString)
-                        Button() {
-                            Text("Add Category")
+                        Button("Add Category") {
+                            print("clicked category")
                         }
                     }
                 }
@@ -45,18 +47,20 @@ struct ContentView: View {
                     List {
                         ForEach(expenses) { expense in
                             NavigationLink {
-                                Text("Expense at \(expense.timestamp!, formatter: expenseFormatter)")
-                                Text("Expense currency: \(expense.currency ?? "Unknown")")
-                                Text("Expense amount: \(expense.amount)")
+                                if(expense.currency == "USD") {
+                                    Label("\(expense.amount)", systemImage: "dollarsign.circle.fill")
+                                }
+//                                Text("Expense currency: \(expense.currency ?? "Unknown")")
+//                                Text("Expense amount: \(expense.amount)")
                                 Text("Expense category: \(expense.category ?? "Unknown")")
                             } label: {
-                                Text(expense.timestamp!, formatter: expenseFormatter)
-                                Text("Expense currency: \(expense.currency ?? "Unknown")")
-                                Text("Expense amount: \(expense.amount)")
+                                Label("\(expense.amount)", systemImage: "dollarsign.circle.fill")
                                 Text("Expense category: \(expense.category ?? "Unknown")")
                             }
                         }
-                        .onDelete(perform: deleteExpenses)
+                        .onDelete(perform: { indexSet in
+                            viewModel.deleteExpense(offsets: indexSet, viewContext: viewContext)
+                        })
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
@@ -68,11 +72,14 @@ struct ContentView: View {
                                 isShowingAddView.toggle()
                             }
                             .sheet(isPresented: $isShowingAddView) {
-                                ExpenseAddView()
+                                ExpenseAddView().environment(\.managedObjectContext, viewContext)
                             }
                         }
                     }
                     Text("Select an Expense")
+                    Button("Generate Random Expense") {
+                        viewModel.addExpense(viewContext: viewContext)
+                    }
                 }
                 .tabItem {
                     Label("Categories", systemImage: "list.bullet.circle.fill")
@@ -89,60 +96,6 @@ struct ContentView: View {
                 .tag(2)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        }
-    }
-
-    private func addExpense() {
-        withAnimation {
-            let newExpense = Expense(context: viewContext)
-            newExpense.timestamp = Date()
-            newExpense.amount = Int64(Int.random(in: 0...300))
-            newExpense.currency = "USD"
-            newExpense.category = "General"
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-    private func addCategory() {
-        withAnimation {
-            let newCategory = Category(context: viewContext)
-            newExpense.timestamp = Date()
-            newExpense.amount = Int64(Int.random(in: 0...300))
-            newExpense.currency = "USD"
-            newExpense.category = "General"
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-
-    private func deleteExpenses(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { expenses[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
         }
     }
 }
@@ -194,40 +147,43 @@ struct MainHeaderView: View {
             Spacer()
             if selectedIndex == 0 {
                 Label("Home", systemImage: "house.fill")
-                    .font(.system(size: 18))
+//                    .font(.system(size: 18))
                     .highlighted()
                     .background(menuCapsule)
             } else {
                 Label("Home", systemImage: "house.fill")
 //                    .labelStyle(IconOnlyLabelStyle())
-                    .font(.system(size: 18))
+//                    .font(.system(size: 18))
                     .unhighlighted()
+//                    .background(grayMenuCapsule)
                     .onTapGesture {selectedIndex = 0 }
             }
             Spacer()
             if selectedIndex == 1 {
                 Label("Categories", systemImage: "list.bullet.circle.fill")
-                    .font(.system(size: 18))
+//                    .font(.system(size: 18))
                     .highlighted()
                     .background(menuCapsule)
             } else {
                 Label("Categories", systemImage: "list.bullet.circle.fill")
 //                    .labelStyle(IconOnlyLabelStyle())
-                    .font(.system(size: 18))
+//                    .font(.system(size: 18))
                     .unhighlighted()
+//                    .background(grayMenuCapsule)
                     .onTapGesture {selectedIndex = 1 }
             }
             Spacer()
             if selectedIndex == 2 {
                 Label("Profile", systemImage: "person.circle.fill")
-                    .font(.system(size: 18))
+//                    .font(.system(size: 18))
                     .highlighted()
                     .background(menuCapsule)
             } else {
                 Label("Profile", systemImage: "person.circle.fill")
 //                    .labelStyle(IconOnlyLabelStyle())
-                    .font(.system(size: 18))
+//                    .font(.system(size: 18))
                     .unhighlighted()
+//                    .background(grayMenuCapsule)
                     .onTapGesture {selectedIndex = 2 }
             }
             Spacer()
@@ -243,10 +199,15 @@ struct MainHeaderView: View {
             .foregroundColor(.yellow)
             .matchedGeometryEffect(id: "capsule", in: tabSelection)
     }
+//    var grayMenuCapsule: some View {
+//        Capsule()
+//            .foregroundColor(.gray)
+//            .matchedGeometryEffect(id: "capsule", in: tabSelection)
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
     }
 }

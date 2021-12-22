@@ -14,6 +14,7 @@ struct FinanceTrackingAssistantApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(FTAViewModel())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

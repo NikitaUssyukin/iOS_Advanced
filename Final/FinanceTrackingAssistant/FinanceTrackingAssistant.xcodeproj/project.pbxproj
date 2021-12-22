@@ -15,6 +15,7 @@
 		112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */; };
 		AB018F8727724DA00065488C /* ExpenseAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB018F8627724DA00065488C /* ExpenseAddView.swift */; };
 		AB018F8A2772522E0065488C /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB018F882772522E0065488C /* Expense+CoreDataClass.swift */; };
+		ABDE481B277325FB00613E31 /* FTAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE481A277325FB00613E31 /* FTAViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		112C9A05277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceTrackingAssistant.xcdatamodel; sourceTree = "<group>"; };
 		AB018F8627724DA00065488C /* ExpenseAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseAddView.swift; sourceTree = "<group>"; };
 		AB018F882772522E0065488C /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABDE481A277325FB00613E31 /* FTAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +61,14 @@
 		112C99F8277220EA0009FCFC /* FinanceTrackingAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				AB018F882772522E0065488C /* Expense+CoreDataClass.swift */,
+				ABDE48192773259A00613E31 /* Models */,
+				ABDE48182773259000613E31 /* ViewModels */,
+				ABDE48162773253200613E31 /* Views */,
 				112C99F9277220EA0009FCFC /* FinanceTrackingAssistantApp.swift */,
-				112C99FB277220EA0009FCFC /* ContentView.swift */,
 				112C99FD277220EC0009FCFC /* Assets.xcassets */,
 				112C9A02277220EC0009FCFC /* Persistence.swift */,
 				112C9A04277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld */,
 				112C99FF277220EC0009FCFC /* Preview Content */,
-				AB018F8627724DA00065488C /* ExpenseAddView.swift */,
 			);
 			path = FinanceTrackingAssistant;
 			sourceTree = "<group>";
@@ -77,6 +79,31 @@
 				112C9A00277220EC0009FCFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ABDE48162773253200613E31 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				112C99FB277220EA0009FCFC /* ContentView.swift */,
+				AB018F8627724DA00065488C /* ExpenseAddView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ABDE48182773259000613E31 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ABDE481A277325FB00613E31 /* FTAViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ABDE48192773259A00613E31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB018F882772522E0065488C /* Expense+CoreDataClass.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +182,7 @@
 				112C9A06277220EC0009FCFC /* FinanceTrackingAssistant.xcdatamodeld in Sources */,
 				AB018F8A2772522E0065488C /* Expense+CoreDataClass.swift in Sources */,
 				112C99FA277220EA0009FCFC /* FinanceTrackingAssistantApp.swift in Sources */,
+				ABDE481B277325FB00613E31 /* FTAViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
